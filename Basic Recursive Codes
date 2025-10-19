@@ -1,0 +1,11 @@
+void printNumbers(int n){ // Printing Numbers in Reverse Order .
+    if(n==0) return ;
+    cout << n << gap ;
+    printNumbers(n-1) ;
+}
+
+void printNumbers(int n){ // Printing Numbers in Regular Order .
+    if(n==0) return ;
+    printNumbers(n-1) ;
+    cout << n << gap ;  
+}
