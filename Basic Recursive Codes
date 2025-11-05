@@ -24,3 +24,9 @@ ll digitSum(ll n){
     if(n==0) return 0LL ; 
     return n%10 + digitSum(n/10) ;
 }
+
+ll fibonacchi(ll n){
+    if(n==0) return 0 ; 
+    if(n==1) return 1 ;
+    return fibonacchi(n-1) + fibonacchi(n-2) ;
+}
