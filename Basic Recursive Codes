@@ -31,6 +31,19 @@ ll fibonacchi(ll n){
     return fibonacchi(n-1) + fibonacchi(n-2) ;
 }
 
+ll binarySearch(ll low , ll high , ll target){
+    while(low<=high){
+        ll mid = low + (high-low)/2 ; 
+        if(mid==target){
+            return mid ;
+        }else if(mid<target){
+            return binarySearch(mid+1,high,target) ;
+        }else{
+            return binarySearch(low,mid-1,target) ;
+        }
+    }
+}
+
 bool isSorted( vll vec , ll n ){
     if(n<2) return true ;
     return vec[n-1] >= vec[n-2] and isSorted(vec,n-1) ;
