@@ -9,3 +9,8 @@ void printNumbers(int n){ // Printing Numbers in Regular Order .
     printNumbers(n-1) ;
     cout << n << gap ;  
 }
+
+ll factorial(ll n){
+    if(n==0) return 1LL ; 
+    return n * 1LL * factorial(n-1) ;
+}
