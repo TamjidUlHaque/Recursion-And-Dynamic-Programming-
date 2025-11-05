@@ -19,3 +19,8 @@ ll sumOfNums(ll n){
     if(n==0) return 0LL ; 
     return n + sumOfNums(n-1) ;
 }
+
+ll digitSum(ll n){
+    if(n==0) return 0LL ; 
+    return n%10 + digitSum(n/10) ;
+}
