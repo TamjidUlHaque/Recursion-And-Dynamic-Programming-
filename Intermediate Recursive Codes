@@ -1,0 +1,9 @@
+void printSubsets(vll &vec, vll &ans , int idx){
+    if(idx==len(vec)){
+        display(ans) ; cout << sesh ; return ;
+    }
+    ans.pb(vec[idx]) ;
+    printSubsets(vec,ans,idx+1) ;
+    ans.pop_back() ;
+    printSubsets(vec,ans,idx+1) ;
+}
