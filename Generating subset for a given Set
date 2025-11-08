@@ -1,0 +1,43 @@
+vll numbers ; 
+ll fact = 1LL ;
+vector<vll> subsets ;
+vector<pair<ll,ll>> idxValPair ;
+
+void subset(vll &vec, vll &ans, ll it) {
+    if (it == len(vec)) {
+        subsets.pb(ans) ; return ;
+    }
+    ans.pb(vec[it]);
+    subset(vec, ans, it + 1);
+    ans.pop_back();
+    subset(vec, ans, it + 1);
+}
+
+void giveMeMyGloryBack() {
+    ll n ; cin >> n ; ll minval = countsetbitsll(n) ;
+    nsort(idxValPair) ; 
+    for(auto val:idxValPair){
+        if(val.F>n) break ; ll temp = n-val.F ;
+        minval = min(minval,val.S+countsetbitsll(temp)) ;
+    }
+    cout << minval << endl ;
+}   
+
+
+int main(){
+    Bismillah() ;
+
+    for(ll i = 1 ; i <= 15 ; i++) {fact *= i ; numbers.pb(fact) ;} 
+
+    vll ans ; subset(numbers,ans,0) ;
+    
+    for(auto arr:subsets){
+        ll sum = 0 ; 
+        for(auto val:arr) sum += val ;
+        idxValPair.pb({sum,len(arr)}) ; 
+    }
+
+    testloop giveMeMyGloryBack() ;
+
+    Alhamdulillah ;
+}
